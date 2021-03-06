@@ -3,19 +3,15 @@
 | -------- | ------ | ----------------------------- |
 |first_name| string | null:false                    |
 | last_name| string | null:false                    |
-|first_name_kana| string | null:false                    |
-|last_name_kana | string | null:false                    |
+|first_name_kana| string | null:false               |
+|last_name_kana | string | null:false               |
 | email    | string | null:false                    |
 | tel      | string | null:false                    |
-| postcode | string | null:false                    |
-|prefecture| string | null:false                    |
-| city     | string | null:false                    |
-| street   | string | null:false                    |
-| building | string | null:false                    |
 
 ### Association
 - has_one  :card
 - has_many :orders
+- has_one  :address
 
 ## Orders
 | Column      | Type        | Options                       |
@@ -53,3 +49,4 @@
 
 ### Association
 - belongs_to :order
+- belongs_to :user
