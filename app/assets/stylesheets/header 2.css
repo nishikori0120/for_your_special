@@ -1,0 +1,12 @@
+a{
+  text-decoration: none;
+}
+
+.lists-right{
+  display: flex;
+  list-style: none;
+}
+
+.login{
+  margin-right: 3vw;
+}
