@@ -39,8 +39,8 @@
 ## Addresses
 | Column   | Type       | Options                       |
 | ------   | ---------- | ----------------------------- |
-| postcode | string     | null:false                    |
-|prefecture| string     | null:false                    |
+| postcode | integer     | null:false                   |
+|prefecture_code| integer     | null:false              |
 | city     | string     | null:false                    |
 | street   | string     | null:false                    |
 | building | string     | null:false                    |

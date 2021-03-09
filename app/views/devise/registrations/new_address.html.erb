@@ -4,28 +4,28 @@
   <%= render "devise/shared/error_messages", resource: @address %>
 
   <div class="field">
-    <%= f.label :郵便番号 %><br />
-    <%= f.text_field :postcode %>
+    <%= f.label :postcode, '郵便番号' %><br />
+    <%= f.text_field :postcode, autocomplete:'postcode', id:'user_postcode' %>
   </div>
 
   <div class="field">
-    <%= f.label :都道府県 %><br />
-    <%= f.text_field :prefecture %>
+    <%= f.label :prefecture, "都道府県" %><br />
+    <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, { prompt: '選択してください' }, id:'user_prefecture_code' %>
   </div>
 
   <div class="field">
-    <%= f.label :市町村 %><br />
-    <%= f.text_field :city %>
+    <%= f.label :city, '市区町村' %><br />
+    <%= f.text_field :city, autocomplete: 'address_city', id:'user_address_city' %>
   </div>
 
   <div class="field">
-    <%= f.label :番地 %><br />
-    <%= f.text_field :street %>
+    <%= f.label :street, '番地' %><br />
+    <%= f.text_field :street, autocomplete: 'address_street', id:'user_address_street' %>
   </div>
 
   <div class="field">
-    <%= f.label :建物名・号室 %><br />
-    <%= f.text_field :building %>
+    <%= f.label :building, '建物名・号室' %><br />
+    <%= f.text_field :building, autocomplete: 'address_building' %>
   </div>
 
   <div class="actions">
