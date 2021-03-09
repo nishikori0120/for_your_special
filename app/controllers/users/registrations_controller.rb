@@ -26,6 +26,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
        render :new_address and return
      end
     @user.address.build(@address.attributes)
+    binding.pry
     @user.save
     session["devise.regist_data"]["user"].clear
     sign_in(:user, @user)
@@ -35,7 +36,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   private
 
   def address_params
-    params.require(:address).permit(:postcode,:prefecture,:city,:street,:building)
+    params.require(:address).permit(:postcode,:prefecture_code,:city,:street,:building)
   end
   # GET /resource/sign_up
   # def new
