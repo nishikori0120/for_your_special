@@ -3,20 +3,20 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .kv-wrapper{
-  width: 80%;
-  background-image: image-url('bg-img.png');
-  // width: calc(100vw - 0px);
-  height: 100vh;
+  width: 100vw;
+  height: 750px;
   min-height: 555px;
+  background-image: url("/assets/bg-img.png");
+  background-repeat: no-repeat;
+  background-size: contain;
   position: absolute;
   right: 0;
-  background-repeat: no-repeat;
+  overflow: hidden;
+  z-index: 1;
   animation-name: overLay;
-  animation-timing-function: cubic-bezier(0, 0, 1, 1);
   animation-duration: 1s;
   animation-delay: 0.3s;
   animation-fill-mode: backwards;
-  overflow: hidden;
 }
 
 @keyframes overLay {
