@@ -1,24 +1,23 @@
 ## Users
 | Column   | Type   | Options                       |
 | -------- | ------ | ----------------------------- |
-| name     | string | null:false                    |
+|first_name| string | null:false                    |
+| last_name| string | null:false                    |
+|first_name_kana| string | null:false               |
+|last_name_kana | string | null:false               |
 | email    | string | null:false                    |
 | tel      | string | null:false                    |
-| postcode | string | null:false                    |
-|prefecture| string | null:false                    |
-| city     | string | null:false                    |
-| street   | string | null:false                    |
-| building | string | null:false                    |
 
 ### Association
 - has_one  :card
 - has_many :orders
+- has_one  :address
 
 ## Orders
 | Column      | Type        | Options                       |
 | ----------- | ----------  | ----------------------------- |
-| k-name      | string      | null:false                    |
-| r-name      | string      | null:false                    |
+| k_name      | string      | null:false                    |
+| r_name      | string      | null:false                    |
 | birthday    | string      | null:false                    |
 | height      | string      | null:false                    |
 | user        | references  | null:false, foreign_key: true |
@@ -40,8 +39,8 @@
 ## Addresses
 | Column   | Type       | Options                       |
 | ------   | ---------- | ----------------------------- |
-| postcode | string     | null:false                    |
-|prefecture| string     | null:false                    |
+| postcode | integer     | null:false                   |
+|prefecture_code| integer     | null:false              |
 | city     | string     | null:false                    |
 | street   | string     | null:false                    |
 | building | string     | null:false                    |
@@ -50,4 +49,4 @@
 
 ### Association
 - belongs_to :order
-
+- belongs_to :user

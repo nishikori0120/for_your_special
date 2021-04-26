@@ -1,0 +1,15 @@
+<header class="site-header">
+  <div class="nav">
+    <div class="lists-left">
+      <img src="#" class="logo">
+    </div>
+    <ul class="lists-right">
+    <% if user_signed_in? %>
+      <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "login" %></li>
+    <% else %>
+      <li><%= link_to "ログイン", new_user_session_path, class: "login" %></li>
+      <li><%= link_to "はじめての注文はこちら", new_user_registration_path, class: "sign-up" %></li>
+    <% end %>
+    </ul>
+  </div>
+</header>

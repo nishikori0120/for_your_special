@@ -1,0 +1,58 @@
+.hidden{
+  display: none;
+  width:230px;
+  z-index: 2;
+  padding: 5px;
+  border: lightslategrey 1px solid;
+  border-radius: 0.4em;
+  background-color: ivory;
+  margin: 0 auto;
+}
+
+.send_address{
+  position: relative;
+  text-align: center;
+}
+
+.add_address{
+  color:cadetblue;
+  transition: all 0.3s ease 0s;
+  position: absolute;
+  top: 12px;
+  right: 430px;
+}
+
+
+.add_address:hover{
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.next{
+  margin-top: 25px;
+}
+
+.sub_title{
+  font-size: 1.3rem;
+  margin:10px 0px 10px;
+}
+
+.address_list{
+  width:200px;
+  border:dodgerblue 1px solid;
+  padding:10px;
+  margin: 0 auto;
+}
+
+.name{
+  margin-bottom: 5px;
+  font-weight: bolder;
+}
+
+.postcode{
+  margin-bottom: 5px;
+}
+
+.address{
+  width:100%;
+}

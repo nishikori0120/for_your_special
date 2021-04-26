@@ -1,0 +1,31 @@
+<%= render 'shared/second_header' %>
+
+<%= form_for(@user, url: users_path, method: :patch) do |f| %>
+  <%= render "devise/shared/error_messages", resource: @user %>
+
+  <div class="field">
+    <%= f.label :お名前 %><br />
+    <%= f.text_area :first_name, autofocus: true, placeholder:"例）伊藤" %>
+    <%= f.text_area :last_name,  placeholder:"例）健太郎" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :お名前カナ %><br />
+    <%= f.text_area :first_name_kana, placeholder:"例）イトウ" %>
+    <%= f.text_area :last_name_kana, placeholder:"例）ケンタロウ" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :メールアドレス %><br />
+    <%= f.email_field :email, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :電話番号 %><i>（ハイフン不要）</i><br />
+    <%= f.text_field :tel %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "更新する" %>
+  </div>
+<% end %>
