@@ -1,0 +1,23 @@
+.AccountPage {
+  display: flex;
+}
+
+.card_info {
+  margin-right: 20px;
+}
+
+.Account__info{
+  margin-right: 20px;
+}
+
+.edit {
+  font-size: 15px;
+  color:cadetblue;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.edit:hover{
+  opacity: 1;
+  color:cornflowerblue;
+}

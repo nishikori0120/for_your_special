@@ -25,7 +25,7 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
-# Reduces boot times through caching; required in config/boot.rb
+# Reduces boot times through caching; required in config/boot.rba
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
@@ -56,3 +56,7 @@ gem 'devise'
 gem 'pry-rails'
 
 gem 'jp_prefecture'
+
+gem 'payjp'
+gem 'active_hash'
+gem 'jquery-rails'

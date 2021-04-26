@@ -1,0 +1,64 @@
+<%= render 'shared/second_header' %>
+
+<div class="comfimation">
+  <div class="container">
+    <p class="title">
+      ご注文内容の確認
+    </p>
+    <div class="order_data">
+      <div class="order_baby">
+      <p class="sub_title">
+        赤ちゃんのこと
+      </p>
+        <ul>
+          <li><%= @order.k_name %><br></li>
+          <li><%= @order.r_name %><br></li>
+          <li><%= @order.birthday %><br></li>
+          <li><%= @order.height %>cm<br></li>
+        </ul>
+      </div>
+
+      <div class="order_address">
+      <p class="sub_title">
+        配送先
+      </p>
+        <% if @new_address.blank? %>
+        <ul>
+          <li class="name"><%= current_user.first_name %><%= current_user.last_name %><br /></li>
+          <li class="postcode">〒<%= @address.postcode %><br /></li>
+          <li class="address"><%= @address.prefecture_name %><%= @address.city%><br /></li>
+          <li><%= @address.street %></li>
+          <li><%= @address.building %></li>
+        </ul>
+        <% elsif @new_address.postcode.present? %>
+        <ul>
+          <li class="name"><%= @new_address.first_name %><%= @new_address.last_name %><br /></li>
+          <li class="postcode">〒<%= @new_address.postcode %><br /></li>
+          <li class="address"><%= @new_address.prefecture_name %><%= @new_address.city%><br /></li>
+          <li><%= @new_address.street %></li>
+          <li><%= @new_address.building %></li>
+        </ul>
+        <% else %>
+      <ul>
+          <li class="name"><%= current_user.first_name %><%= current_user.last_name %><br /></li>
+          <li class="postcode">〒<%= @address.postcode %><br /></li>
+          <li class="address"><%= @address.prefecture_name %><%= @address.city%><br /></li>
+          <li><%= @address.street %></li>
+          <li><%= @address.building %></li>
+        </ul>
+        <% end %>
+      </div>
+    </div>
+
+       <div class="btn next">
+        <%= link_to  order_order_end_path, method: :post do %>
+        <div class="sc-eTpRJs cegJMn-second">
+        <div class="sc-iuJeZd bJmZck-second">
+          <div class="sc-esOvli imkpqd-second">注文確定<br></div>
+        </div>
+    <% end %>
+    </div>
+  </div>
+</div>
+
+</div>

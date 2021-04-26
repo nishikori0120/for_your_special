@@ -16,8 +16,8 @@
 ## Orders
 | Column      | Type        | Options                       |
 | ----------- | ----------  | ----------------------------- |
-| k-name      | string      | null:false                    |
-| r-name      | string      | null:false                    |
+| k_name      | string      | null:false                    |
+| r_name      | string      | null:false                    |
 | birthday    | string      | null:false                    |
 | height      | string      | null:false                    |
 | user        | references  | null:false, foreign_key: true |

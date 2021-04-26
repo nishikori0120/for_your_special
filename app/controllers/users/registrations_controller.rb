@@ -15,7 +15,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
      end
     session["devise.regist_data"] = {user: @user.attributes}
     session["devise.regist_data"][:user]["password"] = params[:user][:password]
-    @address = @user.address.build
+    @address = @user.build_address
     render :new_address
   end
 
@@ -25,18 +25,54 @@ class Users::RegistrationsController < Devise::RegistrationsController
      unless @address.valid?
        render :new_address and return
      end
-    @user.address.build(@address.attributes)
-    binding.pry
+    @user.build_address(@address.attributes)
     @user.save
     session["devise.regist_data"]["user"].clear
     sign_in(:user, @user)
-    redirect_to root_path
+    redirect_to new_card_path
   end
+
+  def update
+    user = current_user
+    if user.update_attributes(sign_up_params)
+      redirect_to @user
+    else
+     render 'edit'
+    end
+   end
+
+  def address_update
+    address = current_user.address
+    if address.update_attributes(update_address)
+      redirect_to user_path(current_user)
+    else
+     render 'address_edit'
+    end
+   end
 
   private
 
+  # def user_params
+  #   params.permit(:first_name, :last_name, :first_name_kana, :last_name_kana, :tel, :email)
+  # end
+
+
+  def update_address
+    params.require(:address).permit(:postcode,:prefecture,:city,:street,:building)
+  end
+
   def address_params
-    params.require(:address).permit(:postcode,:prefecture_code,:city,:street,:building)
+    params.require(:address).permit(:postcode,:prefecture,:city,:street,:building).merge(first_name: @user.first_name, first_name_kana: @user.first_name_kana, last_name: @user.last_name, last_name_kana: @user.last_name_kana, tel: @user.tel)
+  end
+
+  protected
+
+  def update_resource(resource, params)
+    resource.update_without_password(params)
+  end
+
+  def configure_account_update_params
+    devise_parameter_sanitizer.permit(:account_update, keys: [:distance])
   end
   # GET /resource/sign_up
   # def new

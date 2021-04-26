@@ -1,15 +1,58 @@
-<header class="site-header">
-  <div class="nav">
-    <div class="lists-left">
-      <img src="#" class="logo">
+ <%# 疑問①　ページごとに指定のjsを読み込ませるには？？　%>
+
+    <div class="nav">
+      <div class="top-left">
+        <a class="top-logo-area" href="/">
+          <img src="/assets/top-logo.png" class="top-logo">
+        </a>
+      </div>
+      <div class="top-right">
+      <% if user_signed_in? %>
+        <%= link_to "コンセプト", '#', class: "login" %>
+        <%= link_to "#{@user.first_name}"'さんのマイページ', user_path(current_user.id), class: "login" %>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "login" %>
+      <% else %>
+        <%= link_to "コンセプト", '/', class: "login" %>
+        <%= link_to "ログイン", new_user_session_path, class: "login" %>
+        <%= link_to "はじめての注文はこちら", new_user_registration_path, class: "sign-up" %>
+      <% end %>
+      </div>
     </div>
-    <ul class="lists-right">
-    <% if user_signed_in? %>
-      <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "login" %></li>
-    <% else %>
-      <li><%= link_to "ログイン", new_user_session_path, class: "login" %></li>
-      <li><%= link_to "はじめての注文はこちら", new_user_registration_path, class: "sign-up" %></li>
-    <% end %>
-    </ul>
+
+
+  <div class="kv">
+    <img src="/assets/top-logo.png" class="top-logo">
+    <div class="kv-wrapper">
+    </div>
+      <div class="message_fade">
+        <p>おめでとう。</p><br>
+        <p>そして</p><br>
+        <p>生まれてきてくれて、ありがとう。</p>
+      </div>
   </div>
-</header>
+
+  <div class="container">
+      <div class="item-wrapper">
+        <div class="concept">
+          <p class="concept-text">ハンドメイドで刺繍を作成しております。</p>
+          <p class="concept-text">出産されたお友達やご家族の赤ちゃんに</p>
+          <p class="concept-text">プレゼントを贈りませんか？？</p>
+        </div>
+        <div class="items">
+        <%= image_tag 'item1', class:'item-image' %>
+        <%= image_tag 'item4', class:'item-image' %>
+        </div>
+        <div class="discription">
+          <p>リボンの長さは”赤ちゃんが生まれてきた時の身長”でお作りしています。</p>
+        </div>
+      </div>
+
+      <div class="order_start">
+        <%= link_to new_order_path do %>
+          <div class="sc-eTpRJs cegJMn">
+            <div class="sc-iuJeZd bJmZck">
+              <div class="sc-esOvli imkpqd">ご注文は<br>こちら</div>
+            </div>
+        <% end %>
+        </div>
+      </div>
