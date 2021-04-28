@@ -1,0 +1,67 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@font-face {
+  font-family: "名前";
+  src: url('ファイル名') format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.kv-wrapper{
+  width: 85%;
+  background-image: image-url('bg-img.png');
+  // width: calc(100vw - 0px);
+  height: 100%;
+  min-height: 555px;
+  position: absolute;
+  right: 0;
+  background-repeat: no-repeat;
+  animation-name: overLay;
+  animation-timing-function: cubic-bezier(0, 0, 1, 1);
+  animation-duration: 1s;
+  animation-delay: 0.3s;
+  animation-fill-mode: backwards;
+  overflow: hidden;
+}
+
+@keyframes overLay {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.message_fade{
+  position: absolute;
+  top:240px;
+  left:150px;
+  animation-name: fadeIn;
+  animation-timing-function: cubic-bezier(0.1, 0.3, 0.2, 1);
+  animation-duration: 1s;
+  animation-delay: 1.5s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 15px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.message_fade p{
+  font-size: 20px;
+}
+

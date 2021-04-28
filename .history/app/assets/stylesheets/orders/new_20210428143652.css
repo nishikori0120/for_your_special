@@ -1,0 +1,45 @@
+.container{
+  width: 980px;
+  margin: 0 auto;
+}
+
+li {
+  list-style: none;
+}
+
+.form {
+  display: flex;
+}
+
+.title{
+  font-size: 2.0rem;
+  font-weight: bolder;
+  margin-bottom: 20px;
+}
+
+.baby-form-aria{
+  width: 100vw;
+  height: 100vh;
+  background-color: blanchedalmond;
+}
+
+.baby-form{
+  text-align: center;
+}
+
+.baby-data{
+  width: 50%;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+  background-color: #fff;
+  padding: 20px 0px;
+  margin: 0 auto;
+}
+
+.field{
+  margin-bottom: 10px;
+}
+
+
+.next{
+  margin-top: 10px;
+}

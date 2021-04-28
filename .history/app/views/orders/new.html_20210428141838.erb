@@ -1,0 +1,40 @@
+<%= render 'shared/second_header' %>
+
+<div class="aria">
+  <div class="container">
+　  <div class="baby-form">
+    <p class="title">赤ちゃんのことを教えてください</p>
+
+    <div class="baby-data">
+      <%= form_with(model: @order, url: orders_path, local: true) do |f| %>
+      <%= render "devise/shared/error_messages", resource: @order %>
+
+      <div class="field">
+        <%= f.label :k_name, '赤ちゃんのお名前（漢字）', class: 'form-label' %><br />
+        <%= f.text_field :k_name, autofocus: true, placeholder: "太郎" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :r_name, '赤ちゃんのお名前（ローマ字）' %><br />
+        <%= f.text_field :r_name, placeholder: "tarou" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :birthday, '赤ちゃんの生年月日' %><br />
+        <%= f.date_field :birthday, placeholder: "こちらをクリック" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :height, '赤ちゃん誕生時の身長' %><br />
+        <%= f.number_field :height, min: 30, max: 70 %>
+      </div>
+
+      <div class="field">
+        <%= f.submit "次に進む", class: 'btn next' %>
+      </div>
+      <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>
